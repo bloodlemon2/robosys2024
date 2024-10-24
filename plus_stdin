@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+SPDX-FileCopyrightText: 2024 Tomoya Tsuji <s23c1093hj@s.chibakoudai.jp>
+
 import sys
 
 
