@@ -8,7 +8,7 @@ ng () {
 res=0
 
 ### 正常な動作 ###
-out=$(seq 4 | ./plus)
+out=$(seq 5 | ./plus)
 [ "${out}" = 15 ] || ng "$LINENO"
 
 ### 異常な動作 ###
