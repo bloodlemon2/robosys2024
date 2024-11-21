@@ -8,5 +8,5 @@ jobs:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
     steps:
     - uses: actions/checkout@v3
-    - name: All test
+    - name: All test1
       run: bash -xv ./test1.bash
