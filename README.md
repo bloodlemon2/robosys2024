@@ -7,6 +7,7 @@
 
 ## prime_factorizationコマンドで出来ること
 ![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/test.yml/badge.svg)
+
 標準入力から読み込んだ正の自然数を素因数分解する.
 読み込んだ値が素数であれば素数と表示される.
 
