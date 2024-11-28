@@ -85,10 +85,10 @@ $ echo 17 | ./prime_factorization
 ## おすすめの使用方法
 multiplyコマンドとの併用
 
-'''
+```
 $ seq 10 | ./multiply | ./prime_factorization
 3628800=2*2*2*2*2*2*2*2*3*3*3*3*5*5*7
-'''
+```
 
 ## インストール方法
 
