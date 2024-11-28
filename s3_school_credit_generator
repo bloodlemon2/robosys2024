@@ -1,0 +1,126 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Tomoya Tsuji <s23c1093hj@s.chibakoudai.jp>
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+import random
+
+def easy (x):
+    if ((x >= 0) and (x < 2)):
+        return 1
+    if ((x >= 2) and (x < 4)):
+        return 2
+    if ((x >= 4) and (x < 7)):
+        return 3
+    if ((x >= 7) and (x < 10)):
+        return 4
+
+def normal (x):
+    if ((x >= 0) and (x < 1)):
+        return 0
+    if ((x >= 1) and (x < 3)):
+        return 1
+    if ((x >= 3) and (x < 6)):
+        return 2
+    if ((x >= 6) and (x < 8)):
+        return 3
+    if ((x >= 8) and (x < 10)):
+        return 4
+
+def diffcult (x):
+    if ((x >= 0) and (x < 3)):
+        return 0
+    if ((x >= 3) and (x < 6)):
+        return 1
+    if ((x >= 6) and (x < 8)):
+        return 2
+    if ((x >= 8) and (x < 9)):
+        return 3
+    if ((x >= 9) and (x < 10)):
+        return 4
+
+s3_credit = ['英語理解', '英語表現', 'ロボット設計製作論実習2', '教養共通科目', '電気電子アクティブラーニング', '電気電子回路論', '制御工学Ⅰ', '制御工学Ⅱ', '異文化理解', 'メカニクス1']
+
+total_score = 0
+school_credit = 0
+fail = 0
+overlap = 0
+
+for subject in sys.stdin:
+    subject = int(subject.rstrip())
+
+    if ((subject < 0) or (subject >= 10)):
+        break
+
+#簡単な科目
+
+    if ((subject >= 4) and (subject <= 5)):
+        if ( s3_credit[subject] == 'check'):
+            overlap = 1
+            break
+
+        if ( s3_credit[subject] != 'check'):
+            school_credit += 2
+            score = easy (random.randrange(10))
+            total_score += score * 2
+            s3_credit[subject] = 'check'
+
+#普通な科目
+
+    if (((subject >= 0) and (subject <= 3)) or ((subject >= 7) and (subject <= 8))):
+        if ( s3_credit[subject] == 'check'):
+            overlap = 1
+            break
+
+        if ( s3_credit[subject] != 'check'):
+            if ((subject == 0) or (subject == 1)):
+                school_credit += 1
+            else :
+                school_credit += 2
+
+            score = normal (random.randrange(10))
+            if ((subject == 0) or (subject == 1)):
+                total_score += score
+            if (((subject >= 2) and (subject <= 3)) or ((subject >= 7) and (subject <= 8))):
+                total_score += score * 2
+
+            if (((subject == 0) or (subject == 1)) and (score == 0)):
+                fail += 1
+            elif ((((subject >= 2) and (subject <= 3)) or ((subject >= 7) and (subject <= 8))) and (score == 0)):
+                fail += 2
+
+            s3_credit[subject] = 'check'
+
+#難しい科目
+    if ((subject == 6) or (subject == 9)):
+        if ( s3_credit[subject] == 'check'):
+            overlap = 1
+            break
+
+        if ( s3_credit[subject] != 'check'):
+            if (subject == 6):
+                school_credit += 2
+            else :
+                school_credit += 4
+
+            score = diffcult (random.randrange(10))
+            if (subject == 6):
+                total_score += score * 2
+            if (subject == 9):
+                total_score += score * 4
+
+            if ((subject == 6) and (score == 0)):
+                fail += 2
+            if ((subject == 9) and (score == 0)):
+                fail += 4
+
+if ((subject < 0) or (subject >= 10)):
+    print("正しい形式で履修登録をしてください")
+
+if (overlap == 1):
+    print("1つの科目を何個も履修できません")
+
+if (((subject >= 0) and (subject < 10)) and (overlap == 0)):
+    get_school_credit = school_credit - fail
+    GPA = float(total_score) / float(school_credit)
+    print ("履修単位数: {}, 獲得単位数: {}, GPA: {}".format(school_credit, get_school_credit, GPA))
