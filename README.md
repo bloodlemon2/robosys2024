@@ -42,12 +42,12 @@
 
 例えば，英語以外の科目すべてを履修することにする.
 
-'''
+```
 $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # 履修番号2 ~ 9を標準入力にする
 履修単位数: 18, 獲得単位数: 14, GPA: 2.111111111111111
 $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう一度実行してみる
 履修単位数: 18, 獲得単位数: 16, GPA: 2.3333333333333335                # 出力が変わる
-'''
+```
 
 ## multiplyコマンドの概要
 ![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/test2.yml/badge.svg)
@@ -56,14 +56,14 @@ $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう�
 
 ## 使用方法
 
-'''
+```
 $ seq 10 | ./multiply    # 1 ~ 10の値をかける
 3628800
-'''
-'''
+```
+```
 $ echo -2 3 | tr ' ' '\n' | ./multiply
 -6
-'''
+```
 
 ## prime_factorizationコマンドの概要
 ![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/test1.yml/badge.svg)
