@@ -23,6 +23,10 @@ out=$(echo 1 1 1 | tr ' ' '\n' | ./s3_school_credit_generator)
 [ "${out}" = "1つの科目を何個も履修できません" ] || ng "$LINENO"
 
 ### 異常な動school_credit_generator作 ###
+out=$(echo 1.0 | ./s3_school_credit_generator)
+[ "$?" = 1 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
 out=$(echo あ | ./s3_school_credit_generator)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"

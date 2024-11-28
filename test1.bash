@@ -1,6 +1,7 @@
-#!/bin/bash -xv
+#!/bin/bash
 # SPDX-FileCopyrightText: 2024 Tomoya Tsuji <s23c1093hj@s.chibakoudai.jp>
 # SPDX-License-Identifier: BSD-3-Clause
+
 ng () {
         echo ${1}行目が違うよ
         res=1

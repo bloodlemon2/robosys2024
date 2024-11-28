@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash
 # SPDX-FileCopyrightText: 2024 Tomoya Tsuji <s23c1093hj@s.chibakoudai.jp>
 # SPDX-License-Identifier: BSD-3-Clause
 
