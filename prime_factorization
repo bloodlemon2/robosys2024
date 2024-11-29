@@ -7,18 +7,12 @@ import sys
 n = int(sys.stdin.read().strip())
 print(n, end="=")
 i = 2
-count = 0
 
 while (i < n):
     if (n%i == 0):
         print(i, end="*")
         n //= i
-        count += 1
     else:
         i += 1
 
-print(n, end="")
-if (count > 0):
-    print()
-if ((count == 0) and (n > 1)):
-    print(", {}は素数だよ".format(n) )
+print(n)

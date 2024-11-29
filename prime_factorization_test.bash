@@ -10,10 +10,10 @@ ng () {
 res=0
 ### 正常な動作 ###
 out=$(echo 8 | ./prime_factorization)
-[ "${out}" = 8=2*2*2 ] || ng "$LINENO"
+[ "${out}" = "8=2*2*2" ] || ng "$LINENO"
 
 out=$(echo 2 | ./prime_factorization)
-[ "${out}" = "2=2, 2は素数だよ" ] || ng "$LINENO"
+[ "${out}" = "2=2" ] || ng "$LINENO"
 
 ### 異常な動作 ###
 out=$(echo 8.0 | ./prime_factorization)

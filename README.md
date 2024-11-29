@@ -1,5 +1,5 @@
 # robosys2024
-2024年に千葉工業大学未来ロボティクス学科のロボットシステム学で作成したコマンド
+2024年に千葉工業大学未来ロボティクス学科のロボットシステム学で作成したコマンド格納用のリポジトリ
 
 ## 概要
 
@@ -9,7 +9,7 @@
     - prime_factorization
 
 ## s3_school_credit_generatorコマンドの概要
-![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/test3.yml/badge.svg)
+![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/s3_school_credit_generator_test.yml/badge.svg)
 
 千葉工業大学未来ロボティクス学科の3セメスターの科目を履修して成績を生成することができる.
 
@@ -19,7 +19,7 @@
 
 設定されている難易度ごとに乱数を使って成績を決めているので，出力が毎回変わり，楽しむことができる.
 
-フル単，GPA: 4.0を目指して頑張ってください.
+フル単位，GPA: 4.0を目指して頑張ってください.
 
 ## 使用方法
 
@@ -50,7 +50,7 @@ $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう�
 ```
 
 ## multiplyコマンドの概要
-![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/test2.yml/badge.svg)
+![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/multiply_test.yml/badge.svg)
 
 標準入力から読み込んだ値すべてをかける.
 
@@ -66,11 +66,9 @@ $ echo -2 3 | tr ' ' '\n' | ./multiply
 ```
 
 ## prime_factorizationコマンドの概要
-![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/test1.yml/badge.svg)
+![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/prime_factorization_test.yml/badge.svg)
 
 標準入力から読み込んだ正の自然数を素因数分解する.
-
-読み込んだ値が素数であれば素数と表示される.
 
 ## 使用方法
 
@@ -80,7 +78,7 @@ $ echo 8 | ./prime_factorization
 ```
 ```
 $ echo 17 | ./prime_factorization
-17=17, 17は素数だよ
+17=17
 ```
 ## おすすめの使用方法
 multiplyコマンドとの併用
@@ -90,7 +88,7 @@ $ seq 10 | ./multiply | ./prime_factorization
 3628800=2*2*2*2*2*2*2*2*3*3*3*3*5*5*7
 ```
 
-## インストール方法
+## ダウンロード方法
 
 ```
 # このリポジトリをクローン
@@ -104,9 +102,6 @@ $ git clone https://github.com/bloodlemon2/robosys2024.git
 $ cd robosys2024
 # その後，コマンドの使用方法をもとに実行
 ```
-## 動作環境
-- Ubuntu 24.04.1 LTS
-- Python 3.12.3
 
 ## 必要なソフトウェア
 - Python
@@ -118,6 +113,6 @@ $ cd robosys2024
 ## ライセンス
 
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- このパッケージは，s3_school_credit_generator，multiply，prime_factorization，test1.bash，test2.bash，test3.bash以外のコードはRyuichi Ueda由来のコード（© 2024 puls, test.bash）を利用しています．
-- このパッケージのコードは，[こちら](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2024)のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+- このパッケージは，s3_school_credit_generator，multiply，prime_factorization，test1.bash，test2.bash，test3.bash以外のコードはRyuichi Ueda由来のコード（plus，test.bash）を利用しています．
+- このパッケージのコードは，[こちら](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
 - © 2024 Tomoya Tsuji
