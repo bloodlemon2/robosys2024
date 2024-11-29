@@ -13,12 +13,10 @@ res=0
 out=$(seq 5 | ./multiply)
 [ "${out}" = 120 ] || ng "$LINENO"
 
+out=$(echo 2.0 -3 | tr ' ' '\n' | ./multiply)
+[ "${out}" = "-6.0" ] || ng "$LINENO"
+
 ### 異常な動作 ###
-out=$(echo 1.0 | ./multiply)
-[ "$?" = 1 ] || ng "$LINENO"
-[ "${out}" = "" ] || ng "$LINENO"
-
-
 out=$(echo あ | ./multiply)
 [ "$?" = 1 ] || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"

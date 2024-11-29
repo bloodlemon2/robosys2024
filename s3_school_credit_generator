@@ -117,10 +117,10 @@ for subject in sys.stdin:
             s3_credit[subject] = 'check'
 
 if ((subject < 0) or (subject >= 10)):
-    print("正しい形式で履修登録をしてください")
+    sys.exit("Error: 正しい形式で履修登録をしてください")
 
 if (overlap == 1):
-    print("1つの科目を何個も履修できません")
+    sys.exit("Error: 1つの科目を何科目も履修できません")
 
 if (((subject >= 0) and (subject < 10)) and (overlap == 0)):
     get_school_credit = school_credit - fail

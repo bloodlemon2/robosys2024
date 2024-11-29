@@ -8,6 +8,21 @@
     - multiply
     - prime_factorization
 
+## ダウンロード方法
+
+```
+# このリポジトリをクローン
+$ git clone https://github.com/bloodlemon2/robosys2024.git
+```
+
+## 起動手順
+
+```
+# ディレクトリに移動
+$ cd robosys2024
+# その後，コマンドの使用方法をもとに実行
+```
+
 ## s3_school_credit_generatorコマンドの概要
 ![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/s3_school_credit_generator_test.yml/badge.svg)
 
@@ -23,7 +38,7 @@
 
 ## 使用方法
 
-初めに，下の表をもとに履修する科目決める. (同じ科目は複数個履修できない)
+初めに，下の表をもとに履修する科目決める.
 
 | 科目                         | 単位数 | 難易度 | 履修番号 |
 | ---------------------------- | ------ | ------ | -------- |
@@ -49,6 +64,22 @@ $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう�
 履修単位数: 18, 獲得単位数: 16, GPA: 2.3333333333333335                # 出力が変わる
 ```
 
+## エラーがでる実行例
+同じ科目の複数個履修したり，履修番号に無い数を標準入力にするとエラーがでます.
+
+```
+$ echo 1 1 1 | tr ' ' '\n' | ./s3_school_credit_generator    # 英語表現を3回履修しようとする
+Error: 1つの科目を何科目も履修できません                     # エラーがでる
+$ $?                                                         # 終了ステータスを確認
+1: command not found                                         # 終了ステータスが1に
+```
+```
+$ echo 12 | ./s3_school_credit_generator    # 履修番号12番の科目を履修しようとする
+Error: 正しい形式で履修登録をしてください   # エラーがでる
+$ $?
+1: command not found
+```
+
 ## multiplyコマンドの概要
 ![test](https://github.com/bloodlemon2/robosys2024/actions/workflows/multiply_test.yml/badge.svg)
 
@@ -61,8 +92,8 @@ $ seq 10 | ./multiply    # 1~10の値をかける
 3628800
 ```
 ```
-$ echo -2 3 | tr ' ' '\n' | ./multiply
--6
+$ echo -2.0 3 | tr ' ' '\n' | ./multiply
+-6.0
 ```
 
 ## prime_factorizationコマンドの概要
@@ -88,19 +119,11 @@ $ seq 10 | ./multiply | ./prime_factorization
 3628800=2*2*2*2*2*2*2*2*3*3*3*3*5*5*7
 ```
 
-## ダウンロード方法
-
+## エラーがでる実行例
+int型でない数字を標準入力にするとエラーがでます.
 ```
-# このリポジトリをクローン
-$ git clone https://github.com/bloodlemon2/robosys2024.git
-```
-
-## 起動手順
-
-```
-# ディレクトリに移動
-$ cd robosys2024
-# その後，コマンドの使用方法をもとに実行
+$ echo 4.0 | ./prime_factorization                           # 4.0を標準入力にする
+ValueError: invalid literal for int() with base 10: '4.0'    # int型でないのでエラーがでる
 ```
 
 ## 必要なソフトウェア
@@ -114,5 +137,9 @@ $ cd robosys2024
 
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 - このパッケージは，s3_school_credit_generator，multiply，prime_factorization，s3_school_credit_generator_test.bash，multiply_test.bash，prime_factorization_test.bash以外のコードはRyuichi Ueda由来のコード（plus，test.bash）を利用しています．
-- このパッケージのコードは，[こちら](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+  - [コマンドに関してのスライド](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson3.html)
+  - [Pythonの関数に関してのスライド(27ページ)](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson4.html#27)
+  - [シェルスクリプトでのテストに関してのスライド](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson6.html)
+  - [GitHubでのテストに関してのスライド](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson7.html)
 - © 2024 Tomoya Tsuji
