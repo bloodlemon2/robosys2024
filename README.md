@@ -61,7 +61,7 @@ $ cd robosys2024
 $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # 履修番号2~9を標準入力にする
 履修単位数: 18, 獲得単位数: 14, GPA: 2.111111111111111
 $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう一度実行してみる
-履修単位数: 18, 獲得単位数: 16, GPA: 2.3333333333333335                # 出力が変わる
+履修単位数: 18, 獲得単位数: 16, GPA: 2.3333333333333335                  # 出力が変わる
 ```
 
 ## エラーがでる実行例
@@ -69,13 +69,13 @@ $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう�
 
 ```
 $ echo 1 1 1 | tr ' ' '\n' | ./s3_school_credit_generator    # 英語表現を3回履修しようとする
-Error: 1つの科目を何科目も履修できません                     # エラーがでる
+Error: 1つの科目を何科目も履修できません                        # エラーがでる
 $ $?                                                         # 終了ステータスを確認
 1: command not found                                         # 終了ステータスが1に
 ```
 ```
 $ echo 12 | ./s3_school_credit_generator    # 履修番号12番の科目を履修しようとする
-Error: 正しい形式で履修登録をしてください   # エラーがでる
+Error: 正しい形式で履修登録をしてください      # エラーがでる
 $ $?
 1: command not found
 ```
