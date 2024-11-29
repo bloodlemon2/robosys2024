@@ -65,7 +65,7 @@ $ echo 2 3 4 5 6 7 8 9 | tr ' ' '\n' | ./s3_school_credit_generator    # もう�
 ```
 
 ## エラーがでる実行例
-同じ科目の複数個履修したり，履修番号に無い数を標準入力にするとエラーがでます.
+同じ科目の複数個履修したり，履修番号に無い数を標準入力にするとエラーがでる.
 
 ```
 $ echo 1 1 1 | tr ' ' '\n' | ./s3_school_credit_generator    # 英語表現を3回履修しようとする
@@ -120,7 +120,7 @@ $ seq 10 | ./multiply | ./prime_factorization
 ```
 
 ## エラーがでる実行例
-int型でない数字を標準入力にするとエラーがでます.
+int型でない数字を標準入力にするとエラーがでる.
 ```
 $ echo 4.0 | ./prime_factorization                           # 4.0を標準入力にする
 ValueError: invalid literal for int() with base 10: '4.0'    # int型でないのでエラーがでる
