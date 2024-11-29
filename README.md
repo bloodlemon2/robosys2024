@@ -113,6 +113,6 @@ $ cd robosys2024
 ## ライセンス
 
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- このパッケージは，s3_school_credit_generator，multiply，prime_factorization，test1.bash，test2.bash，test3.bash以外のコードはRyuichi Ueda由来のコード（plus，test.bash）を利用しています．
+- このパッケージは，s3_school_credit_generator，multiply，prime_factorization，s3_school_credit_generator_test.bash，multiply_test.bash，prime_factorization_test.bash以外のコードはRyuichi Ueda由来のコード（plus，test.bash）を利用しています．
 - このパッケージのコードは，[こちら](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
 - © 2024 Tomoya Tsuji
