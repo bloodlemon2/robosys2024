@@ -114,6 +114,8 @@ for subject in sys.stdin:
             if ((subject == 9) and (score == 0)):
                 fail += 4
 
+            s3_credit[subject] = 'check'
+
 if ((subject < 0) or (subject >= 10)):
     print("正しい形式で履修登録をしてください")
 
